@@ -4,67 +4,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>دعوت‌نامه اختصاصی دانیال</title>
+<title>دعوت ویژه دانیال برای شهرام</title>
 <style>
-body {
-  margin:0;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(135deg,#191329,#49254d,#9b5968);
-  font-family:Tahoma,sans-serif;
-  color:white;
+*{box-sizing:border-box}
+body{
+ margin:0;padding:20px;min-height:100vh;
+ display:flex;align-items:center;justify-content:center;
+ background:linear-gradient(135deg,#171126,#542d50,#a66a78);
+ font-family:Tahoma,sans-serif;color:white;
 }
-.card {
-  width:82%;
-  max-width:380px;
-  padding:35px 22px;
-  text-align:center;
-  border:1px solid #e6c58b;
-  border-radius:22px;
-  background:#ffffff18;
-  box-shadow:0 0 30px #0005;
+.card{
+ width:100%;max-width:430px;padding:28px 22px;
+ border:1px solid #e9cc9a;border-radius:24px;
+ background:#ffffff16;text-align:center;
+ box-shadow:0 15px 45px #0005;
 }
-h1 {color:#f5d69d;}
-p {line-height:2.2;}
-input {
-  width:85%;
-  padding:12px;
-  margin:8px;
-  border:0;
-  border-radius:9px;
-  font-family:Tahoma;
+h1{color:#f5d69d;font-size:25px}
+p{line-height:2}
+.heart{font-size:35px}
+label{display:block;text-align:right;margin:17px 0 7px}
+select,input{
+ width:100%;padding:14px;border-radius:10px;
+ border:1px solid #e6c58b;background:#fff;
+ font-family:Tahoma;font-size:14px;color:#333;
 }
-button {
-  background:#e6c58b;
-  color:#38213b;
-  border:0;
-  padding:13px 25px;
-  border-radius:12px;
-  font-size:16px;
-  cursor:pointer;
+button{
+ margin-top:22px;width:100%;padding:15px;
+ border:0;border-radius:12px;background:#e6c58b;
+ color:#38213b;font-size:17px;font-weight:bold;
+ cursor:pointer;
 }
+.small{font-size:12px;color:#f2dfd0}
 </style>
 </head>
 <body>
 <div class="card">
-<h1>یک دعوت ویژه ❤️</h1>
-<p>شهرام عزیز</p>
-<p>از طرف دانیال، به یک قرار دوستانه و خاص در یک رستوران دعوت هستی.</p>
-<p>منتظر حضورت هستم.</p>
+<div class="heart">💌</div>
+<h1>یک دعوت ویژه</h1>
+<p>شهرام عزیز،</p>
+<p>
+از طرف دانیال به یک قرار دوستانه و خاص
+در تهران دعوت هستی.
+</p>
+<p>انتخاب رستوران، روز و ساعت با توست ❤️</p>
 
-<form action="https://formsubmit.co/nouraiealireza8@gmail.com" method="POST">
-<input type="hidden" name="_subject" value="پاسخ دعوت‌نامه شهرام">
+<form action="https://formsubmit.co/nouraiealireza8@gmail.com"
+method="POST">
+
+<input type="hidden" name="_subject"
+value="پاسخ دعوت نامه دانیال و شهرام">
+
 <input type="hidden" name="_template" value="table">
 
-<input type="text" name="نام" placeholder="نام شما" required>
+<label>نام شما</label>
+<input type="text" name="نام" placeholder="نامت را وارد کن" required>
 
-<input type="hidden" name="پاسخ" value="دعوت را قبول می‌کنم ❤️">
+<label>انتخاب رستوران</label>
+<select name="رستوران انتخابی" required>
+<option value="">یک رستوران انتخاب کن</option>
+<option>فود هانتر - پاسداران یا ستارخان</option>
+<option>رستوران ترمه - محدوده فردوسی</option>
+<option>رستوران آدانا - محدوده میرداماد</option>
+<option>بام پارادایس - محدوده آرژانتین</option>
+</select>
 
-<button type="submit">قبول دعوت ❤️</button>
+<label>انتخاب روز قرار (تقویم شمسی)</label>
+<select name="روز قرار" required>
+<option value="">روز مورد نظرت را انتخاب کن</option>
+<option>سه‌شنبه ۱۰ آذر ۱۴۰۵</option>
+<option>چهارشنبه ۱۱ آذر ۱۴۰۵</option>
+<option>پنجشنبه ۱۲ آذر ۱۴۰۵</option>
+<option>جمعه ۱۳ آذر ۱۴۰۵</option>
+</select>
+
+<label>انتخاب ساعت قرار</label>
+<select name="ساعت قرار" required>
+<option value="">ساعت را انتخاب کن</option>
+<option>۱۲:۰۰</option>
+<option>۱۲:۳۰</option>
+<option>۱۳:۰۰</option>
+<option>۱۳:۳۰</option>
+<option>۱۴:۰۰</option>
+<option>۱۴:۳۰</option>
+<option>۱۵:۰۰</option>
+<option>۱۵:۳۰</option>
+<option>۱۶:۰۰</option>
+</select>
+
+<label>پیام برای دانیال (اختیاری)</label>
+<input type="text" name="پیام" placeholder="پیامت را بنویس">
+
+<button type="submit">ثبت انتخاب و قبول دعوت ❤️</button>
 </form>
 
+<p class="small">
+با ثبت انتخاب، پاسخ شما برای دانیال ارسال می‌شود.
+</p>
+<p>با احترام، دانیال ❤️</p>
 </div>
 </body>
 </html>
