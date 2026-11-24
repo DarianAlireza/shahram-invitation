@@ -4,82 +4,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>دعوت ویژه دانیال برای شهرام</title>
+<title>دعوت ویژه دانیال</title>
 <style>
 *{box-sizing:border-box}
 body{
  margin:0;padding:20px;min-height:100vh;
  display:flex;align-items:center;justify-content:center;
  background:linear-gradient(135deg,#171126,#542d50,#a66a78);
- font-family:Tahoma,sans-serif;color:white;
+ font-family:Tahoma;color:white
 }
 .card{
  width:100%;max-width:430px;padding:28px 22px;
  border:1px solid #e9cc9a;border-radius:24px;
- background:#ffffff16;text-align:center;
- box-shadow:0 15px 45px #0005;
+ background:#ffffff16;text-align:center
 }
-h1{color:#f5d69d;font-size:25px}
+h1{color:#f5d69d}
 p{line-height:2}
-.heart{font-size:35px}
-label{display:block;text-align:right;margin:17px 0 7px}
-select,input{
+label{display:block;text-align:right;margin:16px 0 7px}
+input,select{
  width:100%;padding:14px;border-radius:10px;
- border:1px solid #e6c58b;background:#fff;
- font-family:Tahoma;font-size:14px;color:#333;
+ border:1px solid #e6c58b;background:white;
+ font-family:Tahoma;font-size:14px
 }
 button{
  margin-top:22px;width:100%;padding:15px;
  border:0;border-radius:12px;background:#e6c58b;
- color:#38213b;font-size:17px;font-weight:bold;
- cursor:pointer;
+ color:#38213b;font-size:16px;font-weight:bold
 }
-.small{font-size:12px;color:#f2dfd0}
+#status{margin-top:18px;line-height:2}
 </style>
 </head>
 <body>
 <div class="card">
-<div class="heart">💌</div>
-<h1>یک دعوت ویژه</h1>
-<p>شهرام عزیز،</p>
-<p>
-از طرف دانیال به یک قرار دوستانه و خاص
-در تهران دعوت هستی.
-</p>
-<p>انتخاب رستوران، روز و ساعت با توست ❤️</p>
+<h1>یک دعوت ویژه ❤️</h1>
+<p>شهرام عزیز، از طرف دانیال به یک قرار دوستانه در تهران دعوت هستی.</p>
+<p>انتخاب رستوران، روز و ساعت با توست.</p>
 
-<form action="https://formsubmit.co/nouraiealireza8@gmail.com"
-method="POST">
-
+<form id="inviteForm">
 <input type="hidden" name="_subject"
 value="پاسخ دعوت نامه دانیال و شهرام">
-
 <input type="hidden" name="_template" value="table">
 
 <label>نام شما</label>
-<input type="text" name="نام" placeholder="نامت را وارد کن" required>
+<input name="name" placeholder="نامت را وارد کن" required>
 
 <label>انتخاب رستوران</label>
-<select name="رستوران انتخابی" required>
-<option value="">یک رستوران انتخاب کن</option>
+<select name="restaurant" required>
+<option value="">انتخاب کن</option>
 <option>فود هانتر - پاسداران یا ستارخان</option>
-<option>رستوران ترمه - محدوده فردوسی</option>
-<option>رستوران آدانا - محدوده میرداماد</option>
-<option>بام پارادایس - محدوده آرژانتین</option>
+<option>رستوران ترمه - فردوسی</option>
+<option>رستوران آدانا - میرداماد</option>
+<option>بام پارادایس - آرژانتین</option>
 </select>
 
-<label>انتخاب روز قرار (تقویم شمسی)</label>
-<select name="روز قرار" required>
-<option value="">روز مورد نظرت را انتخاب کن</option>
-<option>سه‌شنبه ۱۰ آذر ۱۴۰۵</option>
+<label>روز قرار</label>
+<select name="date" required>
+<option value="">انتخاب روز</option>
+<option>سه شنبه ۱۰ آذر ۱۴۰۵</option>
 <option>چهارشنبه ۱۱ آذر ۱۴۰۵</option>
 <option>پنجشنبه ۱۲ آذر ۱۴۰۵</option>
 <option>جمعه ۱۳ آذر ۱۴۰۵</option>
 </select>
 
-<label>انتخاب ساعت قرار</label>
-<select name="ساعت قرار" required>
-<option value="">ساعت را انتخاب کن</option>
+<label>ساعت قرار</label>
+<select name="time" required>
+<option value="">انتخاب ساعت</option>
 <option>۱۲:۰۰</option>
 <option>۱۲:۳۰</option>
 <option>۱۳:۰۰</option>
@@ -91,16 +80,56 @@ value="پاسخ دعوت نامه دانیال و شهرام">
 <option>۱۶:۰۰</option>
 </select>
 
-<label>پیام برای دانیال (اختیاری)</label>
-<input type="text" name="پیام" placeholder="پیامت را بنویس">
+<label>پیام اختیاری</label>
+<input name="message" placeholder="پیامت برای دانیال">
 
-<button type="submit">ثبت انتخاب و قبول دعوت ❤️</button>
+<button id="sendButton" type="submit">
+ثبت انتخاب و قبول دعوت ❤️
+</button>
+<div id="status" role="status"></div>
 </form>
-
-<p class="small">
-با ثبت انتخاب، پاسخ شما برای دانیال ارسال می‌شود.
-</p>
-<p>با احترام، دانیال ❤️</p>
 </div>
+
+<script>
+const form = document.getElementById("inviteForm");
+const statusBox = document.getElementById("status");
+const button = document.getElementById("sendButton");
+
+form.addEventListener("submit", async function(event){
+ event.preventDefault();
+
+ button.disabled = true;
+ button.textContent = "در حال ارسال...";
+ statusBox.textContent = "";
+
+ try {
+  const response = await fetch(
+   "https://formsubmit.co/ajax/nouraiealireza8@gmail.com",
+   {
+    method:"POST",
+    body:new FormData(form),
+    headers:{Accept:"application/json"}
+   }
+  );
+
+  const result = await response.json();
+
+  if(response.ok && result.success){
+   statusBox.textContent =
+    "انتخابت با موفقیت ثبت شد ❤️";
+   form.reset();
+  } else {
+   statusBox.textContent =
+    "ارسال انجام نشد. لطفاً دوباره تلاش کن.";
+  }
+ } catch(error){
+  statusBox.textContent =
+   "ارتباط برقرار نشد. اینترنت را بررسی کن و دوباره تلاش کن.";
+ }
+
+ button.disabled = false;
+ button.textContent = "ثبت انتخاب و قبول دعوت ❤️";
+});
+</script>
 </body>
 </html>
